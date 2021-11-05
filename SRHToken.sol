@@ -20,10 +20,10 @@ contract Administrable {
 		_;
 	}
 
-	function transferAdminship(address newAdmin) public onlyAdmin {
+    function transferAdminship(address newAdmin) public onlyAdmin {
         emit AdminshipTransferred(_admin, newAdmin);
         _admin = newAdmin;
-	}
+    }
 }
 
 
