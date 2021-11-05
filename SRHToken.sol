@@ -15,17 +15,16 @@ contract Administrable {
         return _admin;
     }
 
-	modifier onlyAdmin() {
-		require(msg.sender == _admin, "Only Admin may perform this activity.");
-		_;
-	}
+    modifier onlyAdmin() {
+	require(msg.sender == _admin, "Only Admin may perform this activity.");
+	_;
+    }
 
     function transferAdminship(address newAdmin) public onlyAdmin {
         emit AdminshipTransferred(_admin, newAdmin);
         _admin = newAdmin;
     }
 }
-
 
 contract MySRHToken {
     mapping (address => uint256) private _balances;
@@ -128,7 +127,7 @@ contract SRHToken is MySRHToken, Administrable {
     event FrozenFund(address indexed target, bool frozen);
 
     constructor(uint256 initialSupply, string memory tokenName, string memory tokenSymbol, uint8 decimalUnits, address newAdmin) public
-        MyToken(0, tokenName, tokenSymbol, decimalUnits) {
+        MySRHToken(0, tokenName, tokenSymbol, decimalUnits) {
             if(newAdmin != address(0) && newAdmin != msg.sender)
                 transferAdminship(newAdmin);
 
