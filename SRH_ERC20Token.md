@@ -25,7 +25,7 @@
 
 #### 11. Admin has got the authority to freeze or unfreeze tokens of anyone’s account.
 
-#### 12. SRHToken should be ERC20 complaint.
+#### 12. SRHToken should be ERC20 compliant.
 
 ##  _There  are following six functions and two events in ERC20 Token compliant._
 
